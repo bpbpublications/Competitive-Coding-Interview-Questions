@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+char str[] = "apple,banana,cherry,date";
+char delimiter[] = ",";
+// The first call to strtok uses the string to be tokenized
+// and the delimiter string as arguments.
+char *token = strtok(str, delimiter);
+// Subsequent calls to strtok use NULL as the first argument
+// to continue tokenizing the same string.
+while (token != NULL) {
+printf("Token: %s\n", token);
+token = strtok(NULL, delimiter);
+}
+return 0;
+}
